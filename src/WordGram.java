@@ -50,7 +50,8 @@ public class WordGram {
 	 * @return length of the instance variable myWords
 	 */
 	public int length(){
-		return myWords.length;
+		int wrod = myWords.length;
+		return wrod;
 	}
 
 
