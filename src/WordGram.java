@@ -46,7 +46,7 @@ public class WordGram {
 
 	/**
 	 * Complete this comment
-	 * @return
+	 * @return length of the instance variable myWords
 	 */
 	public int length(){
 		return myWords.length;
@@ -55,8 +55,8 @@ public class WordGram {
 
 	/**
 	 * Complete appropriate comment here
-	 * @param o
-	 * @return
+	 * @param o object to compare to wordgram to see if it is a wordgram
+	 * @return true if it is a wordgram and contains same elements as other wordgram, false if it is not the case
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -68,6 +68,10 @@ public class WordGram {
 		return false;
 	}
 
+	/**
+	 * @return the hashCode of the gram  (I did not know if we needed to do a doc comment for this, but I did it anyway)
+	 * This runs only if myHash == 0 because otherwise it would keep running and would not return the correct value
+	 */
 	@Override
 	public int hashCode(){
 		// TODO: complete this method: assign to myHash as needed
@@ -81,7 +85,7 @@ public class WordGram {
 	/**
 	 * Create and complete this comment
 	 * @param last is last String of returned WordGram
-	 * @return
+	 * @return the updated wordgram after you shift every word over to the left and add last to the last index
 	 */
 	public WordGram shiftAdd(String last) {
 		String [] something = Arrays.copyOf (myWords, myWords.length+1);
@@ -93,6 +97,12 @@ public class WordGram {
 		return wg;
 	}
 
+	/**
+	 *
+	 * @return the string created by adding all the words (with .join) that are separated by a space
+	 * this only happens if myToString.equals("") because if not, the code would continuously run and wouldn't
+	 * allow for the code to work
+	 */
 	@Override
 	public String toString(){
 		// TODO: Complete this method, assign to myToString as needed
