@@ -22,6 +22,7 @@ public class WordGram {
 	public WordGram(String[] source, int start, int size) {
 		myWords = new String[size];
 		myToString = "";
+		// how come it doesn't work if I put this as null?
 		myHash = 0;
 		int beg = 0;
 		for (int i = start; i < start + size ; i+=1 ){
