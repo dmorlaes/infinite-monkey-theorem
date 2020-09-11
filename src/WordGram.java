@@ -3,12 +3,12 @@
  * A WordGram represents a sequence of strings
  * just as a String represents a sequence of characters
  * 
- * @author YOUR NAME HERE
+ * @author Dmitri Morales
  *
  */
 public class WordGram {
 	
-	private String[] myWords;   
+	private String[] myWords;
 	private String myToString;  // cached string
 	private int myHash;         // cached hash value
 
@@ -21,8 +21,13 @@ public class WordGram {
 	 */
 	public WordGram(String[] source, int start, int size) {
 		myWords = new String[size];
-		myToString = null;
+		myToString = "";
 		myHash = 0;
+		int beg = 0;
+		for (int i = start; i < start + size ; i+=1 ){
+			myWords[beg] = source[i];
+			beg +=1;
+		}
 
 		// TODO: initialize all instance variable
 	}
@@ -44,8 +49,7 @@ public class WordGram {
 	 * @return
 	 */
 	public int length(){
-		// TODO: change this
-		return 0;
+		return myWords.length;
 	}
 
 
@@ -56,17 +60,20 @@ public class WordGram {
 	 */
 	@Override
 	public boolean equals(Object o) {
-		if (! (o instanceof WordGram) || o == null){
-			return false;
+		if ((this.toString().equals(o.toString()) && (o instanceof WordGram)) || o == null){
+			return true;
 		}
 		// TODO: Complete this method
 
-		return true;
+		return false;
 	}
 
 	@Override
 	public int hashCode(){
 		// TODO: complete this method: assign to myHash as needed
+		if (myHash == 0) {
+			myHash = this.toString().hashCode();
+		}
 		return myHash;
 	}
 	
@@ -77,8 +84,10 @@ public class WordGram {
 	 * @return
 	 */
 	public WordGram shiftAdd(String last) {
+		myWords = Arrays.copyOf( )
 		WordGram wg = new WordGram(myWords,0,myWords.length);
 		// TODO: Complete this method
+
 
 		return wg;
 	}
@@ -86,6 +95,11 @@ public class WordGram {
 	@Override
 	public String toString(){
 		// TODO: Complete this method, assign to myToString as needed
+		if (myToString.equals("")) {
+			myToString = myToString.join(" ", myWords);
+		}
+
+
 		return myToString;
 	}
 }
