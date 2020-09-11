@@ -1,4 +1,4 @@
-
+import java.util.Arrays;
 /**
  * A WordGram represents a sequence of strings
  * just as a String represents a sequence of characters
@@ -84,8 +84,9 @@ public class WordGram {
 	 * @return
 	 */
 	public WordGram shiftAdd(String last) {
-		myWords = Arrays.copyOf( )
-		WordGram wg = new WordGram(myWords,0,myWords.length);
+		String [] something = Arrays.copyOf (myWords, myWords.length+1);
+		something[something.length-1] = last;
+		WordGram wg = new WordGram(something,1,something.length -1);
 		// TODO: Complete this method
 
 
