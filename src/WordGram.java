@@ -79,6 +79,7 @@ public class WordGram {
 		// TODO: complete this method: assign to myHash as needed
 		if (myHash == 0) {
 			myHash = this.toString().hashCode();
+			// would this be considered wrong since I called hashCode() within the override of hashCode() ?
 		}
 		return myHash;
 	}
